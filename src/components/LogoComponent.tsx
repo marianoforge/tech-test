@@ -1,5 +1,5 @@
 import { Image } from "@mantine/core";
-import elixirLogo from "../assets/logo.png";
+import elixirLogo from "../assets/logo.svg";
 
 export const LogoComponent: React.FC = () => {
   return (

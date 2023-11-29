@@ -24,7 +24,7 @@ export const UserDetails: React.FC = () => {
           withBorder
           shadow="sm"
           p="md"
-          className={`mt-2 transition-opacity duration-500 ${
+          className={`mt-2 transition-opacity duration-700 ${
             isDetailsVisible ? "opacity-100" : "opacity-0"
           }`}
         >
