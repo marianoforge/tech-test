@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 import { nameFilterState } from "../state/filters";
 import { TextInput } from "@mantine/core";
 
-const NameFilter: React.FC = () => {
+export const NameFilter: React.FC = () => {
   const [nameFilter, setNameFilter] = useRecoilState(nameFilterState);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,5 +19,3 @@ const NameFilter: React.FC = () => {
     />
   );
 };
-
-export default NameFilter;

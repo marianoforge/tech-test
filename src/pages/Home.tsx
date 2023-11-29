@@ -1,10 +1,10 @@
 import React from "react";
-import UserList from "../components/UserList";
-import NameFilter from "../components/NameFilter";
-import NationalityFilter from "../components/NationalityFilter";
-import UserDetails from "../components/UserDetails";
+import { UserList } from "../components/UserComponents/UserList";
+import { NameFilter } from "../components/NameFilter";
+import { NationalityFilter } from "../components/NationalityFilter";
+import { UserDetails } from "../components/UserComponents/UserDetails";
 import { Box, SimpleGrid, Title } from "@mantine/core";
-import LogoComponent from "../components/LogoComponent";
+import { LogoComponent } from "../components/LogoComponent";
 
 const Home: React.FC = () => {
   return (

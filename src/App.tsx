@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 
 const queryClient = new QueryClient();
 
-const theme = createTheme({
+export const theme = createTheme({
   fontFamily: "Sora",
 });
 

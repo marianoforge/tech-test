@@ -1,12 +1,15 @@
 import { Button, Table } from "@mantine/core";
-import { User } from "../types/UserTypes";
+import { User } from "../../types/UserTypes";
 
 interface UserTableRowProps {
   user: User;
   onClick: () => void;
 }
 
-const UserTableRow: React.FC<UserTableRowProps> = ({ user, onClick }) => {
+export const UserTableRow: React.FC<UserTableRowProps> = ({
+  user,
+  onClick,
+}) => {
   const { name, email, nat, id } = user;
 
   return (

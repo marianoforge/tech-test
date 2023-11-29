@@ -1,9 +1,13 @@
 import React from "react";
 import { Box, Paper, SimpleGrid, Title, Text, Image } from "@mantine/core";
-import UserDetail from "./UserDetail";
-import useUserDetails from "../hooks/useSelectedUserDetails";
+import { UserDetail } from "./UserDetail";
+import useUserDetails from "../../hooks/useSelectedUserDetails";
+import { useRecoilValue } from "recoil";
+import { userDetailsVisibilityState } from "../../state/selectedUserState";
 
-const UserList: React.FC = () => {
+export const UserDetails: React.FC = () => {
+  const isDetailsVisible = useRecoilValue(userDetailsVisibilityState);
+
   const { userDetails, userImage, userFullName, errorMessage } =
     useUserDetails();
 
@@ -15,7 +19,15 @@ const UserList: React.FC = () => {
             User Details
           </Title>
         </Paper>
-        <Paper withBorder shadow="sm" p="md" className="mt-2">
+
+        <Paper
+          withBorder
+          shadow="sm"
+          p="md"
+          className={`mt-2 transition-opacity duration-500 ${
+            isDetailsVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
           {errorMessage && (
             <Text c="red.5" className="text-center">
               Error retrieving user details. please try again later.
@@ -52,5 +64,3 @@ const UserList: React.FC = () => {
     </>
   );
 };
-
-export default UserList;

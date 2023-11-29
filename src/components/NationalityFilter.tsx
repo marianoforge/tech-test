@@ -5,7 +5,7 @@ import { MultiSelect } from "@mantine/core";
 
 const NATIONALITIES = ["US", "GB", "FR", "DE", "AU", "BR", "CA"];
 
-const NationalityFilter: React.FC = () => {
+export const NationalityFilter: React.FC = () => {
   const [nationalityFilter, setNationalityFilter] = useRecoilState(
     nationalityFilterState
   );
@@ -19,5 +19,3 @@ const NationalityFilter: React.FC = () => {
     />
   );
 };
-
-export default NationalityFilter;
