@@ -1,23 +1,28 @@
-import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { Container, MantineProvider, createTheme } from "@mantine/core";
+
+import { RecoilRoot } from "recoil";
+
+import "@mantine/core/styles.css";
+import Home from "./pages/Home";
+
+const queryClient = new QueryClient();
+
+const theme = createTheme({
+  fontFamily: "Sora",
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider theme={theme} defaultColorScheme="dark">
+      <QueryClientProvider client={queryClient}>
+        <RecoilRoot>
+          <Container fluid w={1500}>
+            <Home />
+          </Container>
+        </RecoilRoot>
+      </QueryClientProvider>
+    </MantineProvider>
   );
 }
 
