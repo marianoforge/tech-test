@@ -14,8 +14,10 @@ export const UserTableRow: React.FC<UserTableRowProps> = ({
 
   return (
     <Table.Tr key={id.value}>
-      <Table.Td>{`${name.first} ${name.last}`}</Table.Td>
-      <Table.Td>{email}</Table.Td>
+      <Table.Td className="whitespace-nowrap overflow-ellipsis overflow-hidden">
+        {`${name.first} ${name.last}`}
+      </Table.Td>
+      <Table.Td className="hidden sm:table-cell">{email}</Table.Td>
       <Table.Td>{nat}</Table.Td>
       <Table.Td>
         <Button
@@ -23,6 +25,7 @@ export const UserTableRow: React.FC<UserTableRowProps> = ({
           size="compact-sm"
           onClick={onClick}
           color="violet"
+          className="text-xs sm:text-sm"
         >
           View Details
         </Button>

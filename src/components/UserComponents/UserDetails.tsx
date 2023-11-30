@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Paper, SimpleGrid, Title, Text, Image } from '@mantine/core';
+import { Box, Paper, Title, Text, Image } from '@mantine/core';
 import { UserDetail } from './UserDetail';
 import useUserDetails from '../../hooks/useSelectedUserDetails';
 import { useRecoilValue } from 'recoil';
@@ -7,15 +7,17 @@ import { userDetailsVisibilityState } from '../../state/selectedUserState';
 
 export const UserDetails: React.FC = () => {
   const isDetailsVisible = useRecoilValue(userDetailsVisibilityState);
-
   const { userDetails, userImage, userFullName, errorMessage } =
     useUserDetails();
 
   return (
     <>
-      <Box className="mt-12">
+      <Box className="mt-4 md:mt-12">
         <Paper withBorder shadow="sm" p="md">
-          <Title className="text-pink uppercase text-center" order={2}>
+          <Title
+            className="text-pink uppercase text-center text-lg md:text-xl"
+            order={2}
+          >
             User Details
           </Title>
         </Paper>
@@ -29,8 +31,8 @@ export const UserDetails: React.FC = () => {
           }`}
         >
           {errorMessage && (
-            <Text c="red.5" className="text-center">
-              Error retrieving user details. please try again later.
+            <Text color="red" className="text-center">
+              Error retrieving user details. Please try again later.
             </Text>
           )}
           {!userDetails ? (
@@ -39,16 +41,16 @@ export const UserDetails: React.FC = () => {
             </Text>
           ) : (
             <>
-              <Box className="flex flex-row justify-center gap-6 items-center text-pink mt-4 ">
-                <Image src={userImage} w={100} alt="user image" radius="md" />
+              <Box className="flex flex-col md:flex-row justify-center gap-6 items-center text-pink mt-4">
+                <Image
+                  src={userImage}
+                  style={{ maxWidth: '100px', maxHeight: '100px' }}
+                  alt="user image"
+                  radius="md"
+                />
                 <Title>{userFullName}</Title>
               </Box>
-              <SimpleGrid
-                cols={2}
-                spacing="xs"
-                verticalSpacing="xl"
-                className="mt-8"
-              >
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {userDetails.map((detail: any) => (
                   <UserDetail
                     key={detail.title}
@@ -56,7 +58,7 @@ export const UserDetails: React.FC = () => {
                     value={detail.value}
                   />
                 ))}
-              </SimpleGrid>
+              </div>
             </>
           )}
         </Paper>

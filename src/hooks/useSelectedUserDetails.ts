@@ -49,7 +49,7 @@ const useSelectedUserDetails = () => {
       { title: 'ID Number', value: id.value || 'N/A' },
     ];
 
-    const userImage = picture.medium;
+    const userImage = picture.large;
     const userFullName = `${name.title}. ${name.first} ${name.last}`;
 
     return { userDetails, userImage, userFullName, errorMessage };

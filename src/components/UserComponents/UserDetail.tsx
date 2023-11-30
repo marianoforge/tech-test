@@ -11,7 +11,10 @@ export const UserDetail: React.FC<UserDetailProps> = ({
   value,
   className,
 }) => (
-  <Text fw={700} className={className}>
+  <Text
+    fw={700}
+    className={`${className} text-sm md:text-base text-left md:text-left`}
+  >
     {title}: <span className="text-pink font-normal">{value}</span>
   </Text>
 );

@@ -48,8 +48,8 @@ export const UserList: React.FC = () => {
 
   return (
     <>
-      <Box className="mt-12">
-        <Paper withBorder shadow="sm" p="md">
+      <Box className="mt-4 md:mt-12">
+        <Paper withBorder shadow="sm" p="2 md:p-4">
           {isLoading ? (
             <Box className="flex flex-row justify-center">
               <Loader color="blue" />
@@ -58,9 +58,11 @@ export const UserList: React.FC = () => {
             <Table striped highlightOnHover>
               <Table.Thead color="ocean-blue">
                 <Table.Tr>
-                  <Table.Th>Name</Table.Th>
-                  <Table.Th>Email</Table.Th>
-                  <Table.Th>Nationality</Table.Th>
+                  <Table.Th className="hidden sm:table-cell">Name</Table.Th>
+                  <Table.Th className="hidden sm:table-cell">Email</Table.Th>
+                  <Table.Th className="hidden sm:table-cell">
+                    Nationality
+                  </Table.Th>
                 </Table.Tr>
               </Table.Thead>
               <Table.Tbody>

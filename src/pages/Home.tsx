@@ -9,19 +9,22 @@ import { LogoComponent } from '../components/LogoComponent';
 const Home: React.FC = () => {
   return (
     <>
-      <Box className="mt-8 text-center">
-        <Title className="text-pink uppercase" order={1}>
+      <Box className="mt-4 md:mt-8 text-center">
+        <Title
+          className="text-pink uppercase text-lg md:text-xl lg:text-2xl"
+          order={1}
+        >
           Elixir's Users List
         </Title>
       </Box>
-      <SimpleGrid cols={2} className="mt-12">
+      <div className="mt-6 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
         <NameFilter />
         <NationalityFilter />
-      </SimpleGrid>
-      <SimpleGrid cols={2}>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <UserList />
         <UserDetails />
-      </SimpleGrid>
+      </div>
       <LogoComponent />
     </>
   );
