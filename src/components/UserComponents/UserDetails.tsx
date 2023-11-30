@@ -1,9 +1,9 @@
-import React from "react";
-import { Box, Paper, SimpleGrid, Title, Text, Image } from "@mantine/core";
-import { UserDetail } from "./UserDetail";
-import useUserDetails from "../../hooks/useSelectedUserDetails";
-import { useRecoilValue } from "recoil";
-import { userDetailsVisibilityState } from "../../state/selectedUserState";
+import React from 'react';
+import { Box, Paper, SimpleGrid, Title, Text, Image } from '@mantine/core';
+import { UserDetail } from './UserDetail';
+import useUserDetails from '../../hooks/useSelectedUserDetails';
+import { useRecoilValue } from 'recoil';
+import { userDetailsVisibilityState } from '../../state/selectedUserState';
 
 export const UserDetails: React.FC = () => {
   const isDetailsVisible = useRecoilValue(userDetailsVisibilityState);
@@ -25,7 +25,7 @@ export const UserDetails: React.FC = () => {
           shadow="sm"
           p="md"
           className={`mt-2 transition-opacity duration-700 ${
-            isDetailsVisible ? "opacity-100" : "opacity-0"
+            isDetailsVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
           {errorMessage && (

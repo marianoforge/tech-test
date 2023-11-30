@@ -1,12 +1,12 @@
-import { atom } from "recoil";
-import { User } from "../types/UserTypes";
+import { atom } from 'recoil';
+import { User } from '../types/UserTypes';
 
 export const selectedUserState = atom<User | null>({
-  key: "selectedUserState",
+  key: 'selectedUserState',
   default: null,
 });
 
 export const userDetailsVisibilityState = atom({
-  key: "userDetailsVisibilityState",
+  key: 'userDetailsVisibilityState',
   default: false,
 });

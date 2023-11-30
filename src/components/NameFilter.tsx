@@ -1,8 +1,7 @@
-// src/components/NameFilter.tsx
-import React from "react";
-import { useRecoilState } from "recoil";
-import { nameFilterState } from "../state/filters";
-import { TextInput } from "@mantine/core";
+import React from 'react';
+import { useRecoilState } from 'recoil';
+import { nameFilterState } from '../state/filters';
+import { TextInput } from '@mantine/core';
 
 export const NameFilter: React.FC = () => {
   const [nameFilter, setNameFilter] = useRecoilState(nameFilterState);

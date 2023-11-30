@@ -1,4 +1,4 @@
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core';
 
 interface UserDetailProps {
   title: string;

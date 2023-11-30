@@ -1,15 +1,15 @@
-import { QueryClient, QueryClientProvider } from "react-query";
-import { Container, MantineProvider, createTheme } from "@mantine/core";
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Container, MantineProvider, createTheme } from '@mantine/core';
 
-import { RecoilRoot } from "recoil";
+import { RecoilRoot } from 'recoil';
 
-import "@mantine/core/styles.css";
-import Home from "./pages/Home";
+import '@mantine/core/styles.css';
+import Home from './pages/Home';
 
 const queryClient = new QueryClient();
 
 export const theme = createTheme({
-  fontFamily: "Sora",
+  fontFamily: 'Sora',
 });
 
 function App() {

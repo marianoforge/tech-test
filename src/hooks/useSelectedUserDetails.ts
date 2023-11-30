@@ -1,9 +1,9 @@
-import { useRecoilValue } from "recoil";
-import { selectedUserState } from "../state/selectedUserState";
+import { useRecoilValue } from 'recoil';
+import { selectedUserState } from '../state/selectedUserState';
 
 const useSelectedUserDetails = () => {
   const selectedUser = useRecoilValue(selectedUserState);
-  let errorMessage = "";
+  let errorMessage = '';
 
   if (!selectedUser) {
     return {
@@ -30,23 +30,23 @@ const useSelectedUserDetails = () => {
     const dateOfBirth = new Date(dob.date).toLocaleDateString();
 
     const userDetails = [
-      { title: "Nationality", value: nat },
-      { title: "Email", value: email },
-      { title: "Date Of Birth", value: dateOfBirth },
-      { title: "Age", value: dob.age.toString() },
-      { title: "Gender", value: gender },
-      { title: "Cellphone", value: cell },
-      { title: "Phone", value: phone },
-      { title: "Country", value: location.country },
-      { title: "State", value: location.state },
-      { title: "City", value: location.city },
+      { title: 'Nationality', value: nat },
+      { title: 'Email', value: email },
+      { title: 'Date Of Birth', value: dateOfBirth },
+      { title: 'Age', value: dob.age.toString() },
+      { title: 'Gender', value: gender },
+      { title: 'Cellphone', value: cell },
+      { title: 'Phone', value: phone },
+      { title: 'Country', value: location.country },
+      { title: 'State', value: location.state },
+      { title: 'City', value: location.city },
       {
-        title: "Address",
+        title: 'Address',
         value: `${location.street.name} ${location.street.number}`,
       },
-      { title: "Postal Code", value: location.postcode },
-      { title: "ID Type", value: id.name },
-      { title: "ID Number", value: id.value || "N/A" },
+      { title: 'Postal Code', value: location.postcode },
+      { title: 'ID Type', value: id.name },
+      { title: 'ID Number', value: id.value || 'N/A' },
     ];
 
     const userImage = picture.medium;

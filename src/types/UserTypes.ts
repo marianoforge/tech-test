@@ -39,8 +39,13 @@ export interface Location {
   };
 }
 
+export interface Key {
+  uuid: string;
+}
+
 export interface User {
   id: Id;
+  login: Key;
   name: UserName;
   email: string;
   nat: string;

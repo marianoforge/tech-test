@@ -1,5 +1,5 @@
-import { Button, Table } from "@mantine/core";
-import { User } from "../../types/UserTypes";
+import { Button, Table } from '@mantine/core';
+import { User } from '../../types/UserTypes';
 
 interface UserTableRowProps {
   user: User;
